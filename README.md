@@ -1,4 +1,3 @@
-workspaceAngularJs
+AngularJS - ANGUlarjs.org
 ==================
-
-my experience and POCs with AngularJS Framework 
+I am sharing my pocs and studies with AngularJS framework(I am loving it). Feel free in get fork and make a pull request. 
