@@ -5,21 +5,14 @@
 <script src="http://code.angularjs.org/1.0.6/angular.min.js"></script>
 <script src="app.js"></script>
 <script src="customerController.js"></script>
-<!-- 
-<script>
-	function currentDate($scope){
-		$scope.current = new Date();
-		}
-</script>
- -->
+
 </head>
 <body> 
-<li><a href="#/customer">Customers</a></li>
-<!-- 
-<div ng-controller="currentDate">
-<h2>Angular is working Current	 Date {{current | date:'h:mm:ss a'}}</h2>
-</div>
- -->
+<a href="#/create">Create</a>
+<a href="#/read">Read</a>
+<a href="#/update">Update</a>
+<a href="#/delete">Delete</a>
+<script src="http://code.angularjs.org/1.0.6/angular-resource.min.js"></script>
 <div ng-view></div>
 </body>
 </html>

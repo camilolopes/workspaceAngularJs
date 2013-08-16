@@ -32,4 +32,9 @@ public class CustomerService {
 	public void setCustomerDAO(CustomerDAO customerDAO) {
 		this.customerDAO = customerDAO;
 	}
+	@Transactional
+	public void save(Customer customer) {
+		customerDAO.save(customer);
+		
+	}
 }

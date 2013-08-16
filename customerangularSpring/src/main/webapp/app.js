@@ -1,17 +1,13 @@
-/*
- * Nessa arquivo estamos configurando variaveis e metodos GLOBAIS
- */
-SERVER_URL="http://localhost:8080/customerangularjsspring/rest";
 
 //criando o module para toda app	
-	$app = angular.module('app',[]);
+	$app = angular.module('app',['ngResource']);
 	
 //criando a routes
 	$app.config(function($routeProvider,$httpProvider,$locationProvider){
 				//definindo as rotas
 		$routeProvider.
 		when('/',{templateUrl:'view/customers.html',controller:customerController}).
-		when('/customer',{templateUrl:'view/hello.html',controller:customerController}).
+		when('/create',{templateUrl:'view/form.html',controller:customerController}).
 		otherwise({redirectTo:'/'});
 		
 		/*
@@ -26,11 +22,11 @@ SERVER_URL="http://localhost:8080/customerangularjsspring/rest";
 				$data = response.data;
 				$error = $data.error;
 //				coloquei os alerts para me certificar que a função foi chamada
-				if($error && $error.text)
-					alert("ERROR: " + $error.text);
+				if($error && $error.text);
+//					alert("ERROR: " + $error.text);
 				else{
-					if(response.status=404)
-					alert("Page not found");
+					if(response.status=404);
+//					alert("Page not found");
 				}
 				return $q.reject(response);
 			});
@@ -41,7 +37,7 @@ SERVER_URL="http://localhost:8080/customerangularjsspring/rest";
 
 	$app.run(function($rootScope){
 		$rootScope.server=function(url){
-			alert(SERVER_URL + url);
+//			alert(SERVER_URL + url);
 			return SERVER_URL + url;
 			
 		};
