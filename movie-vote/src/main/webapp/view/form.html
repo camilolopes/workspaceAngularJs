@@ -1,0 +1,26 @@
+<html>
+<body>
+	<label>Faça seu registro para confirmação dos votos</label>
+	<form name="userform"  ng-controller="movieController" ng-submit="registerUser()">
+	 <div>
+	 <span ng-show="userform.$invalid">Os campos * são requeridos</span> 
+	</div>
+	<div>
+		<label>Nome *</label>
+	</div>
+	<div>
+			<input type="text" name="userName" ng-model="user.name"  ng-required="true"/>
+	</div>
+	<div>
+		<label>E-mail *</label>
+	</div>
+	<div>
+		<input type="email" name="userEmail" ng-model="user.email" ng-required="true"/>
+   	 </div>
+	</div>
+	<div>
+		<button ng-disable="userform.$invalid">Registrar</button>
+	</div>
+	</form>
+</body>
+</html>

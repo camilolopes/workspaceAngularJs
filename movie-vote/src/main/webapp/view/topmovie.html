@@ -1,0 +1,19 @@
+<html>
+<body>
+	<H2>Vote no Filme</H2>
+	<label>Votos registrados com sucesso. Veja os filmes mais votados</label>
+	<form  ng-controller="movieController" ng-init="loadTopMovies()">
+	<table>
+		<tr>
+			<td>Nome do filme<td>
+			<td>Total de Votos</td>
+		</tr>
+		<tr ng-repeat="topMovie in listTopMovies">
+			<td>{{topMovie.name}}</td>
+			<td>{{topMovie.totalVote}}</td>
+		</tr>
+	
+	</table>
+	</form>
+</body>
+</html>

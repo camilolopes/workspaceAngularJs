@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+<user id="1" name="camilo" email="camilo@camilolopes.com.br"/>
+<movie id="1" name="SpiderMan" totalVote="1"/>
+<movie id="2" name="X-Men" totalVote="5"/>
+<movie id="3" name="Carandiru" totalVote="6"/>
+<movie id="4" name="Bataman" totalVote="6"/>
+<movie id="5" name="Super Man" totalVote="2"/>
+</dataset>
