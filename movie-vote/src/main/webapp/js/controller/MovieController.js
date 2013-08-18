@@ -5,10 +5,12 @@ var movieController = function($scope, $resource, $location) {
 	$scope.counterVote = 0;
 	var Movies = $resource("rest/movie/");
 	var topMovie = $resource("rest/movie/top");
+	var User = $resource("rest/movie/vote/finish");
 	
 	$scope.loadAllMovies = function() {
 		Movies.query(function(data) {
 			$scope.listMovies = data;
+			
 		});
 
 	};//end loadAllMovies
@@ -37,8 +39,14 @@ var movieController = function($scope, $resource, $location) {
 	};
 	
 	$scope.registerUser = function(){
-//		TODO resource for save user here 
-		$location.path("/topmovie")
+		var u = new User();
+		u.name = $scope.user.name;
+		u.email = $scope.user.email;
+		u.$save();
+		$location.path("/topmovie");
+	};
+	$scope.newVote = function(){
+		$location.path("/");
 	};
 
 };//end movieController

@@ -57,7 +57,7 @@ public class MovieServiceImplTest extends DBUnitConfiguration {
 		movieServiceImpl.voteInMovie(idMovie);
 		long totalVoteAfterVote = movieServiceImpl.getMovie(idMovie).getTotalVote();
 		final long expectedFinalTotalVote = ++totalVoteBeforeVote;
-		assertEquals(2,totalVoteAfterVote);
+		assertEquals(expectedFinalTotalVote,totalVoteAfterVote);
 	}
 	@Test
 	public void testGetListOfMoviesSelectedToBeVotedSizeIsEqualsFour(){

@@ -23,13 +23,6 @@ public class MovieDAOImpl extends HibernateDAO<Movie, Long> implements MovieDAO 
 		return listMovies;
 	}
 	
-//	private List<Movie> getTopListMovies(long totalVote){
-//			Criteria criteria = getCurrentSession().createCriteria(Movie.class);
-//			criteria.add(Restrictions.eq("totalVote", totalVote));
-//			criteria.addOrder(Order.asc("name"));
-//		final List<Movie> list = criteria.list();
-//		return list;
-//	}
 	private Criteria createCriteriaQuery() {
 		Criteria criteria = getCurrentSession().createCriteria(Movie.class);
 		 criteria.addOrder(Order.desc("totalVote"));
@@ -41,7 +34,5 @@ public class MovieDAOImpl extends HibernateDAO<Movie, Long> implements MovieDAO 
 		 	 Movie movie = (Movie) getCurrentSession().get(Movie.class, id);
 			return movie;
 	}
-
-	
 
 }

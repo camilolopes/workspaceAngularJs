@@ -15,7 +15,9 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
 
 import com.camilolopes.movie.interfaces.services.MovieService;
+import com.camilolopes.movie.interfaces.services.UserService;
 import com.camilolopes.movie.model.bean.Movie;
+import com.camilolopes.movie.model.bean.User;
 @Controller
 @Path("/movie")
 public class MovieController {
@@ -24,6 +26,10 @@ public class MovieController {
 	@Qualifier("movieServiceImpl")
 	private MovieService movieServiceImpl;
 	private HashSet<Long> listMoviesIdVoted;
+	@Autowired
+	@Qualifier("userServiceImpl")
+	private UserService userServiceImpl;
+	private List<Movie> listMovieTopVoted;
 	
 	 public MovieController() {
 		 listMoviesIdVoted = new  HashSet<Long>();
@@ -39,15 +45,14 @@ public class MovieController {
 	@Path("/top")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Movie> getListTopMovies(){
-		List<Movie> listMovieTopVoted = movieServiceImpl.getAllMoviesOrderByTheMostVoted();
+		
 		return  listMovieTopVoted;
 	}
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void registerMovieSelected(Movie movie){
-//		TODO retorno a lista atualizada com os outros dois filmes pedendentes 
-//		movieServiceImpl.voteInMovie(movie.getId());
+
 		addListMovieSelected(movie.getId());
 	}
 	
@@ -60,13 +65,28 @@ public class MovieController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/vote/finish")
-	public void registerVote(){
-		
+	public void registerVote(User user){
+		registerUser(user);
+//		TODO refactoring this 
+		for(long idMovie : listMoviesIdVoted){
+			movieServiceImpl.voteInMovie(idMovie);
+		}
+		listMoviesIdVoted.clear();
+		 listMovieTopVoted = movieServiceImpl.getAllMoviesOrderByTheMostVoted();
+		System.out.println(listMoviesIdVoted);
+	}
+
+	private void registerUser(User user) {
+		userServiceImpl.saveOrUpdate(user);
 	}
 	
 	
 	public void setMovieServiceImpl(MovieService movieServiceImpl) {
 		this.movieServiceImpl = movieServiceImpl;
+	}
+
+	public void setUserServiceImpl(UserService userServiceImpl) {
+		this.userServiceImpl = userServiceImpl;
 	}
 	
 }

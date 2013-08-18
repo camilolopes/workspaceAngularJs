@@ -1,7 +1,11 @@
 <html>
 <body>
 	<H2>Vote no Filme</H2>
-	<label>Votos registrados com sucesso. Veja os filmes mais votados</label>
+	Seu resgitro e seu voto foram  registrados com sucesso
+	
+	<div> Veja os filmes mais votados
+	
+	</div>
 	<form  ng-controller="movieController" ng-init="loadTopMovies()">
 	<table>
 		<tr>
@@ -12,8 +16,8 @@
 			<td>{{topMovie.name}}</td>
 			<td>{{topMovie.totalVote}}</td>
 		</tr>
-	
 	</table>
+	<input type="submit" value="Iniciar nova votação" ng-click="newVote()"/>
 	</form>
 </body>
 </html>
