@@ -45,20 +45,18 @@ public class MovieController {
 	@Path("/top")
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<Movie> getListTopMovies(){
-		
+		listMovieTopVoted = movieServiceImpl.getAllMoviesOrderByTheMostVoted();
 		return  listMovieTopVoted;
 	}
 	
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	public void registerMovieSelected(Movie movie){
-
 		addListMovieSelected(movie.getId());
 	}
 	
 	private void addListMovieSelected(long id) {
 		listMoviesIdVoted.add(id);
-		System.out.println(listMoviesIdVoted);
 		
 	}
 	
@@ -67,13 +65,15 @@ public class MovieController {
 	@Path("/vote/finish")
 	public void registerVote(User user){
 		registerUser(user);
-//		TODO refactoring this 
+		registerVote();
+		
+	}
+
+	private void registerVote() {
 		for(long idMovie : listMoviesIdVoted){
 			movieServiceImpl.voteInMovie(idMovie);
 		}
 		listMoviesIdVoted.clear();
-		 listMovieTopVoted = movieServiceImpl.getAllMoviesOrderByTheMostVoted();
-		System.out.println(listMoviesIdVoted);
 	}
 
 	private void registerUser(User user) {
