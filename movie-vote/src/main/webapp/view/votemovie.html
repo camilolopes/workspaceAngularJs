@@ -7,7 +7,6 @@
 	<table>
 		<tbody>
 			<tr ng-repeat="movie in listMovies | limitTo:count">
-			{{listMovies}}
 				<td><input type="radio"	name="movieform">{{movie.name}} 
 					<input type="submit" value="Votar" name="movieform"  
 					ng-click="votar(movie)" >

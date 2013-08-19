@@ -19,6 +19,9 @@ public class MovieServiceImpl implements MovieService {
 	@Autowired
 	@Qualifier("movieDAOImpl")
 	private MovieDAO movieDAOImpl;
+	public MovieServiceImpl() {
+		
+	}
 
 	public void saveOrUpdate(Movie entity) {
 		movieDAOImpl.saveOrUpdate(entity);
@@ -51,13 +54,16 @@ public class MovieServiceImpl implements MovieService {
 		movie.setTotalVote(totalVoteActual);
 		movieDAOImpl.saveOrUpdate(movie);
 	}
+
 	@Transactional
 	public List<Movie> getListSelectedMovie() {
 		Set<Integer> numbers = new HashSet<Integer>();
 		List<Movie> listMovies = movieDAOImpl.readAll();
 		List<Movie> listSelectedMovie = new ArrayList<Movie>();
-		generateIndexRandom(numbers);
-		addMovieByIndex(numbers, listMovies, listSelectedMovie);
+		if (listMovies != null && !listMovies.isEmpty()) {
+			generateIndexRandom(numbers);
+			addMovieByIndex(numbers, listMovies, listSelectedMovie);
+		}
 		return listSelectedMovie;
 	}
 
