@@ -44,7 +44,7 @@ var movieController = function($scope, $resource, $location) {
 		u.email = $scope.user.email;
 		u.$save();
 		$location.path("/topmovie");
-		$route.reload();
+		
 	};
 	$scope.newVote = function(){
 		$location.path("/");
