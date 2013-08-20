@@ -5,7 +5,6 @@ $app.config(function($routeProvider,$httpProvider){
 	when("/registeruser",{templateUrl:'view/form.html',controller:movieController}) .
 	when("/topmovie",{templateUrl:'view/topmovie.html',controller:movieController}) 
 	;
-	
 	$httpProvider.responseInterceptors.push(interceptor);
 	
 });

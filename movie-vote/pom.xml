@@ -151,7 +151,7 @@
 		</dependency>
   </dependencies>
   <build>
-    <finalName>movie-vote</finalName>
+    <finalName>vote-no-filme</finalName>
     <plugins>
   		<!-- JETTY Plugin configuration -->
 			<plugin>

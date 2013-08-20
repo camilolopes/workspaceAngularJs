@@ -1,4 +1,4 @@
-var movieController = function($scope, $resource, $location) {
+var movieController = function($scope, $resource, $location,$window) {
 	$scope.movie = null;
 	$scope.count = 2;
 
@@ -18,6 +18,7 @@ var movieController = function($scope, $resource, $location) {
 	$scope.loadTopMovies = function(){
 		topMovie.query(function(data){
 			$scope.listTopMovies = data;
+			
 		});
 	};
 
@@ -43,7 +44,7 @@ var movieController = function($scope, $resource, $location) {
 		u.name = $scope.user.name;
 		u.email = $scope.user.email;
 		u.$save();
-		$location.path("/topmovie");
+		$window.location.href="#/topmovie";
 		
 	};
 	$scope.newVote = function(){
