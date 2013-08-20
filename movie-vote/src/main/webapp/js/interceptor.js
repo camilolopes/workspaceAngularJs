@@ -1,4 +1,4 @@
-//this is for intercept URL and use route
+
 var interceptor = function($rootScope, $q, $location) {
 
 	function success(response) {
@@ -28,3 +28,7 @@ var interceptor = function($rootScope, $q, $location) {
 };
 
 interceptor.$inject = ['$rootScope', '$q', '$location'];
+$.ajaxSetup ({
+    // Disable caching of AJAX responses
+    cache: false
+});
