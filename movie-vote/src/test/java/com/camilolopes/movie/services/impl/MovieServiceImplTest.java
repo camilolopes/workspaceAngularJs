@@ -28,7 +28,11 @@ public class MovieServiceImplTest extends DBUnitConfiguration {
 	public void testSaveMovieWithSuccess() throws Exception {
 		Movie movie = new Movie();
 		movie.setName("X-men");
-		movieServiceImpl.saveOrUpdate(movie);
+		try{
+			movieServiceImpl.saveOrUpdate(movie);
+		}catch(Exception e){
+			fail("Not Expected Result");
+		}
 	}
 	@Test
 	public void testGetListAllMovieIsNotEmpty(){
@@ -37,7 +41,8 @@ public class MovieServiceImplTest extends DBUnitConfiguration {
 	
 	@Test
 	public void testGetTotalTheMostVotedMovieInTheTopOfList(){
-		final Movie movie = movieServiceImpl.getAllMoviesOrderByTheMostVoted().get(0);
+		int firstElement=0;
+		final Movie movie = movieServiceImpl.getAllMoviesOrderByTheMostVoted().get(firstElement);
 		final long totalVote = movie.getTotalVote();
 		final long expectedTotalVote = 6;
 		assertEquals(expectedTotalVote,totalVote);

@@ -9,5 +9,5 @@ import org.springframework.transaction.annotation.Transactional;
 public interface GenericDAO<T, Type extends Serializable> {
 	@Transactional(propagation=Propagation.REQUIRED,readOnly=false)
 	public void saveOrUpdate(T entity);
-	public List<T> readAll();
+	public List<T> getAll();
 }

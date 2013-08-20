@@ -27,7 +27,7 @@ public abstract class HibernateDAO<T, Type extends Serializable>  implements Gen
 
 	};
 	
-	public List<T> readAll() {
+	public List<T> getAll() {
 		final List<T> list = getCurrentSession().createCriteria(persistentClass).list();
 		return list;
 	}

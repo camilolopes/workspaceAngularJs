@@ -63,10 +63,9 @@ public class MovieController {
 	@POST
 	@Consumes(MediaType.APPLICATION_JSON)
 	@Path("/vote/finish")
-	public void registerVote(User user){
+	public void fisnishVote(User user){
 		registerUser(user);
 		registerVote();
-		
 	}
 
 	private void registerVote() {

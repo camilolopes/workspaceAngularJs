@@ -32,7 +32,7 @@ public class MovieServiceImpl implements MovieService {
 	}
 
 	public List<Movie> getAllMovie() {
-		List<Movie> listMovies = movieDAOImpl.readAll();
+		List<Movie> listMovies = movieDAOImpl.getAll();
 		return listMovies;
 	}
 
@@ -58,13 +58,18 @@ public class MovieServiceImpl implements MovieService {
 	@Transactional
 	public List<Movie> getListSelectedMovie() {
 		Set<Integer> numbers = new HashSet<Integer>();
-		List<Movie> listMovies = movieDAOImpl.readAll();
+		List<Movie> listMovies = movieDAOImpl.getAll();
 		List<Movie> listSelectedMovie = new ArrayList<Movie>();
+		validateListMovies(numbers, listMovies, listSelectedMovie);
+		return listSelectedMovie;
+	}
+
+	private void validateListMovies(Set<Integer> numbers,
+			List<Movie> listMovies, List<Movie> listSelectedMovie) {
 		if (listMovies != null && !listMovies.isEmpty()) {
 			generateIndexRandom(numbers);
 			addMovieByIndex(numbers, listMovies, listSelectedMovie);
 		}
-		return listSelectedMovie;
 	}
 
 	private void addMovieByIndex(Set<Integer> numbers, List<Movie> listMovies,
