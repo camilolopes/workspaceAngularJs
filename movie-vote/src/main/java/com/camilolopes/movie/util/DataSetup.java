@@ -30,9 +30,9 @@ public class DataSetup {
 		listMovies = new ArrayList<String>();
 		listMovies.add("BATMAN");
 		listMovies.add("X-MEN");
-		listMovies.add("PIRATAS DO CARIBE");
-		listMovies.add("SUPERMAN");
-		listMovies.add("HOMEM DE FERRO");
+		listMovies.add("MORTAL KOMBAT");
+		listMovies.add("SUPER-MAN");
+		listMovies.add("SPIDER-MAN");
 	}
 	public void setMovieService(MovieService movieService) {
 		this.movieService = movieService;

@@ -14,14 +14,6 @@
 <!-- use @Transaction annotation in classes -->
 <tx:annotation-driven/>
 
-<!-- Configuration to Transaction -->
-<tx:advice id="txAdvice">
-<tx:attributes>
-<tx:method name="add*" propagation="REQUIRED"/>
-<tx:method name="*" propagation="SUPPORTS" read-only="true"/>
-</tx:attributes>
-</tx:advice>
-
 <!-- Spring's translator exception for Hibernate 4 -->
 <bean class="org.springframework.orm.hibernate4.HibernateExceptionTranslator"/>
 
