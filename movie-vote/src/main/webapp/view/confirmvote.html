@@ -1,11 +1,12 @@
 <html>
 <body>
-	<H2>Vote no Filme</H2>
-	<label>Por favor, finalize a votação</label>
+	<H2 translate="label.title"></H2>
+	<label>{{'msg.finalize.vote' | translate}}</label>
 	<form  ng-controller="movieController">
 	
 	<div>
-			<input type="button" value="Finalizar Votação" ng-click="confirmRegister()">
+			<input type="button" value="{{'label.finish.vote' | translate}}"
+			 ng-click="confirmRegister()">
 	</div>
 	</form>
 </body>

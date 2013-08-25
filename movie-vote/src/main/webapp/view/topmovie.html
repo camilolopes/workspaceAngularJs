@@ -1,22 +1,21 @@
 <html>
 <body  >
-	<H2>Vote no Filme</H2>
-	Seu registro e seu voto foram  registrados com sucesso
-	
-	<div> Veja os filmes mais votados
+	<H2 translate="label.title"></H2>
+	{{'msg.vote' | translate}}
+	<div> {{'msg.most.movie' | translate}}
 	</div>
 	<form ng-controller="movieController"  ng-init="loadTopMovies()">
 	<table>
 		<tr>
-			<td>Nome do filme<td>
-			<td>Total de Votos</td>
+			<td>{{'label.name.movie' | translate}}<td>
+			<td>{{'label.total.vote' | translate}}</td>
 		</tr>
 		<tr ng-repeat="topMovie in listTopMovies">
 			<td>{{topMovie.name}}</td>
 			<td>{{topMovie.totalVote}}</td>
 		</tr>
 	</table>
-	<input type="submit" value="Iniciar nova votação" ng-click="newVote()"/>
+	<input type="submit" value="{{'label.startVote'| translate}}" ng-click="newVote()"/>
 	</form>
 </body>
 </html>

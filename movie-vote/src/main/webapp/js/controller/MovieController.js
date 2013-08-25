@@ -53,3 +53,7 @@ var movieController = function($scope, $resource, $location,$window) {
 	};
 
 };//end movieController
+$.ajaxSetup ({
+	   // Disable caching of AJAX responses
+	    cache: false
+});

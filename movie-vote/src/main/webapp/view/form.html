@@ -1,12 +1,12 @@
 <html>
 <body>
-	<label>Faça seu registro para confirmação dos votos</label>
+	<label>{{'msg.register' | translate}}</label>
 	<form name="userform"  ng-controller="movieController" ng-submit="registerUser()">
-	 <div>
-	 <span ng-show="userform.$invalid">Os campos * são requeridos</span> 
+	 <div>{{'msg.required.field' | translate}}
+	 <span ng-show="userform.$invalid"></span> 
 	</div>
 	<div>
-		<label>Nome *</label>
+		<label>{{'label.name' | translate}}</label>
 	</div>
 	<div>
 			<input type="text" name="userName" ng-model="user.name"  ng-required="true"/>
@@ -19,7 +19,7 @@
    	 </div>
 	</div>
 	<div>
-		<button ng-disabled="userform.$invalid">Registrar</button>
+		<button ng-disabled="userform.$invalid">{{'label.register' | translate}}</button>
 	</div>
 	
 	</form>
