@@ -161,7 +161,7 @@
 				<configuration>
 					 <scanIntervalSeconds>3</scanIntervalSeconds> 
 					<webAppConfig>
-						<contextPath>/vote-no-filme</contextPath>
+						<contextPath>/movie-vote</contextPath>
 					</webAppConfig>
 				</configuration>
 				</plugin>
