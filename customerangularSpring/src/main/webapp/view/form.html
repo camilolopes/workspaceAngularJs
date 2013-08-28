@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body ng-controller="customerController">
+<h2>Register Customer</h2>
+<form  name="customerform">
+<div>
+<label>Name</label>
+<input name="name" ng-model="nameCustomer" require/> {{nameCustomer}}
+</div>
+<div>
+<label>Phone</label>
+<input name="phone" ng-model="phoneCustomer" /> {{phoneCustomer}}
+</div>
+<div>
+<label>E-mail</label>
+<input name="email" ng-model="emailCustomer" type="email" required /> {{emailCustomer}}
+</div>
+<div>
+<input type="button" value="Save" ng-click="newOne()" ng-disabled="customerform.$invalid"/>
+</div>
+</form>
+</body>
+</html>

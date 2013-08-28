@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<h2>AngularJS Customers</h2>
+<div ng-init="loadAll()">
+	<table id="tableData">
+		<thead>
+			<tr>
+				<th>ID</th>
+				<td>Nome</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="row in rows">
+				<td>{{row.id}}</td>
+				<td>{{row.name}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
