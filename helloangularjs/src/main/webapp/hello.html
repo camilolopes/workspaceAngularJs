@@ -1,0 +1,32 @@
+<!doctype html>
+<!-- estamos dizendo quero usar angular -->
+<html ng-app>
+<head>
+<!-- definido a versão do angular que queremos  -->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+	
+	<!-- aqui criamos um js que terá as function -->
+<script src="todo.js">
+</script>
+<title>Insert title here</title>
+</head>
+<body>
+<!-- chamamos a funcao que está no .js -->
+	<div ng-controller="hello">
+	<!-- chamamos a variavel que declaramos no .js  -->
+		Hello {{name}}
+		<hr />
+		<label>Name</label>
+		 <input ng-model="typeName"		placeHolder="type your name please" /> <br />
+			 Hi {{typeName}}, <br />
+			<br/>
+		<br/>
+		<label>Quantity of product</label>
+		 <input type="number"	  ng-model="qt"	required="required" /> 
+			<label>Inform Price</label>
+			 <input	type="number" ng-model="price" required="required" /> 
+			Total {{qt *price | currency}}
+	</div>
+</body>
+</html>
