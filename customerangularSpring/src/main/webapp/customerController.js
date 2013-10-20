@@ -5,7 +5,6 @@ function customerController($scope,$resource,$location){
 	Customer = $resource("rest/service/");
 	
 $scope.loadAll = function(){
-
 	Customer.query(
 			function(data){
 				$scope.rows = data;
