@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<label><input type="checkbox" ng-model="checked">I do not agree </label>
+<button ng-disabled="checked">Finish</button>
+<p/>
+<label><input type="checkbox" ng-model="agreed">I agree </label>
+
+<button ng-disabled="!agreed">Finish</button>
+</body>
+</html>

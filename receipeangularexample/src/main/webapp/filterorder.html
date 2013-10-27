@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<!-- by age only-->
+	<div>
+		<label>Search by age</label> <input ng-model="ageValue" />
+		<ul
+			ng-repeat="friend in friends | filter:{name:query,age:ageValue}|orderBy:'name'">
+			<li>{{friend.name}} ({{friend.age}})</li>
+		</ul>
+	</div>
+	<!-- by name only-->
+	<div>
+		<label>Search by name</label> <input ng-model="nameValue" />
+		<ul
+			ng-repeat="friend in friends | filter:{name:query,name:nameValue}|orderBy:'name'">
+			<li>{{friend.name}} ({{friend.age}})</li>
+		</ul>
+	</div>
+	
+	<!-- by age and name -->
+	<div>
+		<label>Search by age and name</label> <input ng-model="query" />
+		<ul
+			ng-repeat="friend in friends | filter:query|orderBy:'name'">
+			<li>{{friend.name}} ({{friend.age}})</li>
+		</ul>
+	</div>
+</body>
+</html>

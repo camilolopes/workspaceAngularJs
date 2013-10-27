@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form name="form">
+<label> first name</label>
+<input name="firstname" type="text" ng-model="user.firstname" required
+ui-validate="{blacklisted:'notBlackListed($value)'}"/>
+ <button ng-disabled="form.$invalid" class="btn">Submit</button>
+</form>
+
+</body>
+</html>

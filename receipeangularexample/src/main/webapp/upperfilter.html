@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+Enter your name:<input type="text" ng-model="name"></input>
+{{name | uppercase}}
+<br/>
+<input id="checkbox" type="checkbox" ng-model="visible">Masculino
+<div show="visible">
+	<h2>Hello World {{visible}}</h2>
+</div> 
+</body>
+</html>
