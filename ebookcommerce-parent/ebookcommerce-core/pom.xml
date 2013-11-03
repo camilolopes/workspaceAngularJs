@@ -34,8 +34,8 @@
 				<configuration>
 					<url>jdbc:mysql://localhost:3306/camilo_ebook</url>
 					<driver>com.mysql.jdbc.Driver</driver>
-					<user>camilo_admin</user>
-					<password>handson2014</password>
+					<user>camilolopes</user>
+					<password>camilo2593</password>
 					<schemas>
 						<shema>camilo_ebook</shema>
 					</schemas>
