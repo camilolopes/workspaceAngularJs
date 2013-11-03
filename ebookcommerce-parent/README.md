@@ -21,7 +21,11 @@ Após configurado banco de dados,  para criação das tabelas e massa de dados  
 
 
 ###Step 5 
-1.	subindo aplicação mvn tomcat:run 
-http://localhost:8080/ebookcommerce/
+1.	subindo aplicação 
+```Java
+mvn tomcat:run 
+```
+
+Acesse: http://localhost:8080/ebookcommerce/
 
 
