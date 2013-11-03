@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+
+	
+
+	<!-- TYPES_EBOOKS-->
+	<type_ebook id="1" description="Normal"/>
+	<type_ebook id="2" description="Promoção"/>
+	<type_ebook id="3" description="Grátis"/>
+	<type_ebook id="4" description="Lançamento"/>
+	
+	<!--CATEGORY_EBOOKS -->
+	<category_ebook id="1" description="JAVA" />
+	<category_ebook id="2" description="JEE" />
+	<category_ebook id="3" description="MOBILE" />
+	<category_ebook id="4" description=".NET" />
+	<category_ebook id="5" description="AGILE" />
+	<category_ebook id="6" description="RUBY" />
+	
+	<!-- EBOOKS-->
+	<ebook id="1" status="Active" title="TDD" summary_file="tdd.pdf" description="tdd in practice" price="40.00" cover="not defined" year_publish="2012" CATEGORY_EBOOK_ID="1" totalPage="150" editionNumber="1"/>
+	<ebook id="2" status="Active" title="JEE Agile" summary_file="jee.pdf" description="jee with agile" price="40.00" cover="not defined" year_publish="2012" CATEGORY_EBOOK_ID="2" totalPage="100" editionNumber="1"/>
+	<ebook id="3" status="Inactive" title="Guide for SCJP Exam" summary_file="scjp.pdf" description="guide for SCJP exam" price="40.00" cover="not defined" year_publish="2012" CATEGORY_EBOOK_ID="1" totalPage="170" editionNumber="1"/>
+	<ebook_has_type_ebook ebook_id="1" type_ebook_id="1"/>
+	<ebook_has_type_ebook ebook_id="1" type_ebook_id="2"/>
+	
+	<!-- author -->
+	<author id="1" name="camilo" lastname="lopes" email="camilo@xpto.com" repo_url="" twitter="@camilolope" site="www.camilolopes.com.br" name_editor="Camilo Lopes" photo="camilo.jpg" cv="programador java desde..." />
+	<author id="2" name="Martin" lastname="Folwer" email="thiago@xpto.com" repo_url="" twitter="" site="" name_editor="Thiago Pinto" photo="thiago.jpg" cv="programador java desde..." />
+	<author id="3" name="Ana" lastname="Marcela" email="ana@xpto.com" repo_url="" twitter="" site="" name_editor="Ana Marcela" photo="ana.jpg" cv="programador java desde..." />
+	
+	<!-- Ebook has an author -->
+	<ebook_has_author ebook_id="1" author_id="1"/>
+	<ebook_has_author ebook_id="2" author_id="1"/>
+	<ebook_has_author ebook_id="3" author_id="2"/>
+	<ebook_has_author ebook_id="2" author_id="2"/>
+
+</dataset>

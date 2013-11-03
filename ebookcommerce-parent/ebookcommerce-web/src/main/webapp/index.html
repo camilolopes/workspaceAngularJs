@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:ng="http://angularjs.org" id="ng-app" ng-app="app">
+<head>
+<meta charset="UTF-8">
+<title>Books Ecommerce</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="css/bootstrap-responsive-2.3.2.css" rel="stylesheet">
+<style type="text/css">
+html,body {
+	height: 100%;
+}
+</style>
+
+</head>
+<body>
+	<script src="js/lib/jquery.js"></script>
+	<script
+		src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>
+	<script src="js/lib/angular-resource.js"></script>
+	<script src="js/lib/bootstrap.min.js"></script>
+	<script src="js/application.js"></script>
+	<script src="js/router.js"></script>
+	<script src="js/shoppingCart.js"></script>
+	<script src="js/service/EbookService.js"></script>
+	<script src="js/service/DataService.js"></script>
+	<script src="js/controller/HomeController.js"></script>
+	<script src="js/interceptor.js"></script>
+	<script src="js/lib/angular-locale_pt-br.js"></script>
+
+	<!-- BOOSTRAP THEME  -->
+	<nav class="navbar navbar-inverse" role="navigation">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse"
+				data-target=".navbar-ex1-collapse">
+				<span class="sr-only"></span> <span class="icon-bar"></span> <span
+					class="icon-bar"></span> <span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#/">Ebook Store</a>
+		</div>
+
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			<ul class="nav navbar-nav">
+				<li><a href="#/meucarrinho">Meu Carrinho</a></li>
+			</ul>
+		</div>
+
+	</nav>
+	<div class="container">
+		<div ng-view></div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<body>
+
+	<div class="row">
+		<div class="col-sm-6 col-md-3"  ng-repeat="ebook in listHomeEbooks">
+			<a  href="" ng-click="detail(ebook)" >
+				<img src="api/ebook/image/{{ebook.cover}}" alt="{{ebook.cover}}"  width="143" height="202" />
+				<div>{{ebook.title}}</div>
+				<div>{{ebook.price | currency}}</div>
+			</a>
+			<div >
+				<button type="submit" class="btn btn-danger" ng-click="detail(ebook)"  >Comprar</button>
+				</div>
+			<p/>
+		</div>
+	</div>
+
+</body>

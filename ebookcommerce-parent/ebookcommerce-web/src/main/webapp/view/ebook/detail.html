@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<body>
+	<div class="row">
+		<div class="col-sm-6 col-md-3">
+			<div>
+				<img src="api/ebook/image/{{ebookSelected.cover}}" width="280px"
+					height="395px" />
+			</div>
+			<div style="text-align: center"><p/>
+			<a href ng-click="cart.addItem(ebookSelected.id,ebookSelected.title,ebookSelected.price,1)">
+					<button type="submit" class="btn  btn-danger btn-lg"
+						ng-disabled="{{ebookSelected==null}}">
+						<span class="glyphicon glyphicon-shopping-cart"></span> Adicionar ao Carrinho
+					</button>
+				</a>
+				</div>
+				<div>
+				<center><h3>{{ebookSelected.price | currency}}</h3></center>
+				</div>
+		</div>
+		<div class="col-sm-6 col-md-100">
+			<div>
+				<h3>{{ebookSelected.title}}</h3>
+			</div>
+
+			<div ng-repeat="author in ebookSelected.authors">
+				<div>
+					<b>{{author.nameEditor}}</b>
+				</div>
+			</div>
+			<div>
+				<p />
+				{{ebookSelected.description}}
+			</div>
+			<div>
+				<p />
+				<h3>Sumário</h3>
+				<hr>
+			</div>
+			
+			<div>
+				<p />
+				<h3>Dados do livro</h3>
+				<hr>
+			</div>
+			<div>
+				<p />
+				Número de Páginas: {{ebookSelected.totalPage}}
+				<p/>
+				Formatos:<b> .mobi, epub e pdf</b>
+				<p/>
+				Ano publicação: {{ebookSelected.yearPublish}}
+				<p/>
+				Edição:{{ebookSelected.editionNumber}}ª
+			</div>
+			<div ng-show="ebookSelected.isbn!=null">ISBN:{{ebookSelected.isbn}}</div>
+
+		</div>
+	</div>
+	<div class="row">
+	<div ng-repeat="author in ebookSelected.authors">
+				<div>
+					<h3>{{author.nameEditor}}</h3>
+					<hr>
+					<img src="api/author/image/{{author.photo}}"/>
+					<p align="justify">{{author.cv}}
+				</div>
+				<div ng-show="author.twitter!=null">
+				Twitter:<a href="{{author.twitter}}"> {{author.twitter}}</a>
+				</div>
+				<div ng-show="author.site!=null">
+				Blog/Site:<a href="{{author.site}}"> {{author.site}}</a>
+				</div>
+				<div ng-show="author.repoUrl!=null">
+				Repositório de Código:<a href="{{author.repoUrl}}"> {{author.repoUrl}}</a>
+				</div>
+			</div>
+	
+	</div>
+</body>
+</html>

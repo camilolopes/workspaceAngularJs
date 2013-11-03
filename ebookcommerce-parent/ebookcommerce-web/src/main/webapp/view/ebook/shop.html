@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<body>
+
+<div class="container-fluid">
+    <div class="row-fluid">
+        <div class="span8">
+
+            <!-- items -->
+            <table class="table table-bordered">
+
+                <!-- header -->
+                <tr class="well">
+                    <td><b>Ebook</b></td>
+                    <td class="tdCenter"><b>Quantidade</b></td>
+                    <td class="tdRight"><b>Preço Unitário</b></td>
+                    <td class="tdRight"><b>Total</b></td>
+                </tr>
+
+                <tr ng-hide="cart.getTotalCount() > 0" >
+                    <td class="tdCenter" colspan="4">
+                        Carrinho de compras vazio
+                    </td>
+                </tr>
+
+                <!-- cart items -->
+                <tr ng-repeat="item in cart.items | orderBy:'name'">
+                    <td>{{item.name}}</td>
+                    <td class="tdCenter">
+                      <div class="input-append">
+                        <input
+                            class="span3 text-center" type="tel" 
+                            ng-model="item.quantity" 
+                            ng-change="cart.saveItems()" />
+                        <button 
+                            class="btn btn-success" type="button" 
+                            ng-disabled="item.quantity >= 1000"
+                            ng-click="cart.addItem(item.sku, item.name, item.price, +1)">+</button>
+                        <button 
+                            class="btn btn-inverse" type="button" 
+                            ng-disabled="item.quantity <= 1"
+                            ng-click="cart.addItem(item.sku, item.name, item.price, -1)">-</button>
+                      </div>
+                    </td>
+                    <td class="tdRight">{{item.price  | currency}}</td>
+                    <td class="tdRight">{{item.price * item.quantity | currency}}</td>
+                </tr>
+
+                <!-- footer -->
+                <tr class="well">
+                    <td><b>Total da compra</b></td>
+                    <td class="tdCenter"><b>{{cart.getTotalCount()}}</b></td>
+                    <td/>
+                    <td class="tdRight"><b>{{cart.getTotalPrice() | currency}}</b></td>
+                </tr>
+            </table>
+        </div>
+
+        
+        <div class="span4">
+            <p class="text-info">
+                <button 
+                    class="btn btn-block" 
+                    ng-click="goHome()">
+                    <i class="icon-chevron-left" /> Continuar comprando
+                </button>
+                <button 
+                    class="btn btn-block btn-danger" 
+                    ng-click="cart.clearItems()" 
+                    ng-disabled="cart.getTotalCount() < 1" >
+                    <i class="icon-trash icon-white" /> Limpar meu carrinho
+                </button>
+            </p>
+
+            <br /><br />
+            
+        </div>
+    </div>
+</div>
+	
+</body>

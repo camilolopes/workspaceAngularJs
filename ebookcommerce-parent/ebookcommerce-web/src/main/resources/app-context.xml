@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+	http://www.springframework.org/schema/beans
+	 http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.2.xsd">
+ 
+	<context:component-scan base-package="com.camilolopes.core" />
+	
+	<import resource="classpath:/META-INF/app-context.xml"/>
+	
+	
+	<bean id="dropboxToken" class="java.lang.String">
+		<constructor-arg value="DpFkOmSumk0AAAAAAAAAAZHqHcBow3Zb9pSAQhv22FACorQHqBKsMIK4qBd_zBdA"/>
+	</bean>
+	
+	<bean id="ebookImageService" class="com.camilolopes.web.services.impl.EbookImageServiceDropbox">
+		<constructor-arg ref="dropboxToken" />
+	</bean>
+        
+	<bean id="authorImageService" class="com.camilolopes.web.services.impl.AuthorImageServiceDropbox">
+		<constructor-arg ref="dropboxToken" />
+	</bean>
+
+</beans>
