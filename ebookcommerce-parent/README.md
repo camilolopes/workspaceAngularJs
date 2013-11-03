@@ -12,7 +12,7 @@ Note: caso deseje  usar outras informações é preciso alterar o arquivo app-co
 Após configurado banco de dados,  para criação das tabelas e massa de dados  basta rodar os seguinte comandos no ecommerce-core
 
 1.	mvn  clean compile flyway:info
-2.	mvn  clean compile flyway:migrate
+2.	mvn  flyway:migrate
 
 
 ###Step 4 
