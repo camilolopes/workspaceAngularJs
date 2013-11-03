@@ -15,12 +15,12 @@ Após configurado banco de dados,  para criação das tabelas e massa de dados  
 2.	mvn  flyway:migrate
 
 
-###Step 4 
+###Step 3
 1.	via command line vá até o modulo ebookcommerce-parent 
 2.	execute mvn clean install 
 
 
-###Step 5 
+###Step 4 
 1.	subindo aplicação 
 ```
 mvn tomcat:run 
