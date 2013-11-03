@@ -1,6 +1,6 @@
-Ebook E-commerce AnuglarJS + Java 
+##Ebook E-commerce AnuglarJS + Java 
 
-Rodando local
+###Rodando local
 
 ###Step 1 
 1.	Crie o schema camilo_ebook no MySql 5.x
