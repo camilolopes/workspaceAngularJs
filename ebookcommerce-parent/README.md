@@ -28,4 +28,5 @@ mvn tomcat:run
 
 Acesse: http://localhost:8080/ebookcommerce/
 
+Versão live: (http://apps.camilolopes.com.br/ebookcommerce/)
 
