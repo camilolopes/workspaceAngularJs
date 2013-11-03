@@ -6,5 +6,4 @@ INSERT INTO `ebook_has_author` (`ebook_id`, `Author_ID`) VALUES
 (2, 2),
 (3, 1),
 (4, 2),
-(5, 1),
-(5, 2);
+(3, 2);
