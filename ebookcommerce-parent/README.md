@@ -26,7 +26,7 @@ Após configurado banco de dados,  para criação das tabelas e massa de dados  
 mvn tomcat:run 
 ```
 
-Acesse: http://localhost:8080/ebookcommerce/
+Acesse Local: http://localhost:8080/ebookcommerce/
 
 Versão live: http://apps.camilolopes.com.br/ebookcommerce/
 
