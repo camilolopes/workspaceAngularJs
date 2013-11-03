@@ -22,7 +22,7 @@ Após configurado banco de dados,  para criação das tabelas e massa de dados  
 
 ###Step 5 
 1.	subindo aplicação 
-```Java
+```java
 mvn tomcat:run 
 ```
 
