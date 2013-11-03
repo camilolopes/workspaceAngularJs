@@ -23,7 +23,8 @@ public abstract class DBUnitConfiguration extends DatabaseTestCase {
 	
 	private FileInputStream loadFile;
 	private Connection connection;
-	@Autowired private SessionFactory sessionFactory;
+	@Autowired 
+	private SessionFactory sessionFactory;
 	private final String pathDataSet = "src/test/resources/";
 	private String nameDataSetXml = "ecommerce-dataset.xml";
 	private String dataSetXml;
