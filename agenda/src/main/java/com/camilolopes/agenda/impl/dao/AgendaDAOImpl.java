@@ -9,7 +9,12 @@ public class AgendaDAOImpl extends GenericHibernateDAO<Agenda> implements	Agenda
 
 	public AgendaDAOImpl() {
 		super(Agenda.class);
-		// TODO Auto-generated constructor stub
+	}
+
+	public Agenda find(long id) {
+		Agenda registerFound = (Agenda) getCurrentSession().get(getPersistentClass(), id);
+		
+		return registerFound;
 	}
 
 }

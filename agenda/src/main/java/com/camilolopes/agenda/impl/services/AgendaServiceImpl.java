@@ -18,4 +18,9 @@ public class AgendaServiceImpl extends GenericServiceImpl<Agenda, AgendaDAO> imp
 	public void setDao(AgendaDAO dao) {
 		super.setDao(dao);
 	}
+
+	public Agenda find(long id) {
+		
+		return getDao().find(id);
+	}
 }

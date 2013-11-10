@@ -4,4 +4,6 @@ import com.camilolopes.agenda.model.domain.Agenda;
 
 public interface AgendaDAO extends GenericDAO<Agenda> {
 
+	Agenda find(long id);
+
 }

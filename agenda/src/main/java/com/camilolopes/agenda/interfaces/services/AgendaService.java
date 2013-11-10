@@ -4,4 +4,6 @@ import com.camilolopes.agenda.model.domain.Agenda;
 
 public interface AgendaService extends GenericService<Agenda> {
 
+	Agenda find(long id);
+
 }

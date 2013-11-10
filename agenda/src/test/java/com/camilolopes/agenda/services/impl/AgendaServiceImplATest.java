@@ -33,5 +33,27 @@ public class AgendaServiceImplATest extends DBUnitConfiguration {
 		agendaServiceImpl.save(pateta);
 		assertFalse(agendaServiceImpl.listAll().isEmpty());
 	}
+	
+	@Test
+	public void testDeleteContatoWithSucess(){
+		Agenda registerCamilo = agendaServiceImpl.find(1L);
+		assertNotNull(registerCamilo);
+		agendaServiceImpl.delete(registerCamilo);
+		assertTrue(agendaServiceImpl.listAll().isEmpty());
+	}
+	@Test
+	public void testUpdateContatoWithSuccess(){
+		long id = 1L;
+		Agenda registerCamilo = agendaServiceImpl.find(id);
+		String lastName = "Neto";
+		registerCamilo.setLastName(lastName);
+		agendaServiceImpl.update(registerCamilo);
+		Agenda registerCamiloUpdated = agendaServiceImpl.find(id);
+		assertEquals(lastName,registerCamiloUpdated.getLastName());
+	}
+	@Test
+	public void testGetAllRegisterDataBaseIsNotEmpty(){
+		assertFalse(agendaServiceImpl.listAll().isEmpty());
+	}
 
 }
