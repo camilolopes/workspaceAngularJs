@@ -5,7 +5,7 @@
 ###Required 
 * Java 
 *  MySql 5.x
-*  Mave 3.x 
+*  Maven 3.x 
 
 ###Step 1 
 1.	Create a schemma camilo_ebook  with MySql 5.x
