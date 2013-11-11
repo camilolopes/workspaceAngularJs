@@ -11,7 +11,7 @@
 1.	Create a schemma camilo_ebook  with MySql 5.x
 2.	create a user camilolopes with password camilo2593 
 
-Note: You wish use other data is required update  ebookcommerce-core/app-context.xml file and update .sql (/ebookcommerce-core/src/main/resources/db/migration) with your schemma. Update  ebookcommerce-core/pom.xml in flyway plugin with the information of your database. 
+W> You wish use other data is required update  ebookcommerce-core/app-context.xml file and update .sql (/ebookcommerce-core/src/main/resources/db/migration) with your schemma. Update  ebookcommerce-core/pom.xml in flyway plugin with the information of your database. 
 
 ###Step 2 
 After setup of database, now we need to create the tables. Because of this we have [flyway plugin](flywaydb.org) added to project. Execute the command via maven the following:
@@ -21,9 +21,13 @@ After setup of database, now we need to create the tables. Because of this we ha
 
 
 ###Step 3
-1.	via command line go to ebookcommerce-parent 
-2.	execute mvn clean install 
 
+1.	via commandline go to ebookcommerce-parent 
+2.	execute:
+
+```java
+mvn clean install 
+```
 
 ###Step 4 
 1.	starting application
@@ -36,9 +40,11 @@ Acesse Local: http://localhost:8080/ebookcommerce/
 
 Live Version: http://apps.camilolopes.com.br/ebookcommerce/
 
-Note: for while my store is in portuguese. I am working on to translate using angularJS :)
+W> for while my store is in portuguese. I am working on to translate using angularJS :)
 
 Some meaning:
+
 Meu Carrinho is: shopping cart
+
 Comprar is : buy 
 
