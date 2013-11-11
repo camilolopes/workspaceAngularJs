@@ -3,7 +3,7 @@
 ###Running Local
 
 ###Required 
-* Java 
+* Java 1.5
 *  MySql 5.x
 *  Maven 3.x 
 
