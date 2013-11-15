@@ -1,5 +1,3 @@
-
-
 	$app = angular.module('app',['ngResource']);
 	
 	$app.config(function($routeProvider,$httpProvider,$locationProvider){
