@@ -31,5 +31,22 @@
 			<input type="submit" value="save" ng-click="save()" />
 		</div>
 	</form>
+	
+	<div>
+		<table>
+		<tr>
+		<td>Name</td>
+		<td>LastName</td>
+		<td>Phone</td>
+		<td>Email</td>
+		</tr>
+		<tr ng-repeat="contato in listAgenda">
+			<td>{{contato.name}}</td>
+			<td>{{contato.lastName}}</td>
+			<td>{{contato.phone}}</td>
+			<td>{{contato.email}}</td>
+		</tr>
+		</table>
+	</div>
 </body>
 </html>

@@ -11,7 +11,12 @@ var AgendaController = function($scope,AgendaService){
 		$scope.agenda.$create(function(){
 			//depois que salvamos atualizamos a lista
 			$scope.listAgenda = AgendaService.list();
+			$scope.reset();
 		});
+	};
+	
+	$scope.reset = function(){
+		$scope.agenda = new AgendaService();
 	};
 };
 //isso aqui pe dependency injection 
