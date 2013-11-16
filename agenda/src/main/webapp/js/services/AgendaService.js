@@ -7,6 +7,9 @@ $app.factory('AgendaService', [ '$resource', function($resource) {
 		list : {
 			method : 'GET',
 			isArray : true
+		},
+		update :{
+			method : "PUT"
 		}
 	}
 

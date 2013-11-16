@@ -6,18 +6,34 @@ var AgendaController = function($scope,AgendaService){
 	//estamos invocando o serviço restful 
 	$scope.listAgenda = AgendaService.list();
 	
-	//método que salva 
+	$scope.reset = function(){
+		$scope.agenda = new AgendaService();
+	};
+	
+	//método que salva ou atualiza
 	$scope.save = function(){
-		$scope.agenda.$create(function(){
-			//depois que salvamos atualizamos a lista
+		if($scope.agenda.id > 0){
+			$scope.update();
+		}else{
+			$scope.agenda.$create(function(){
+				//depois que salvamos atualizamos a lista
+				$scope.listAgenda = AgendaService.list();
+				$scope.reset();
+			});
+		}
+	};
+	
+	$scope.update = function(){
+		$scope.agenda.$update(function(){
 			$scope.listAgenda = AgendaService.list();
 			$scope.reset();
 		});
 	};
 	
-	$scope.reset = function(){
-		$scope.agenda = new AgendaService();
+	$scope.edit= function(agenda){
+		$scope.agenda = agenda;
 	};
+
 };
 //isso aqui pe dependency injection 
 AgendaController.$inject=['$scope', 'AgendaService'];

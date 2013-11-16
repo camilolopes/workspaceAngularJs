@@ -41,6 +41,7 @@
 		<td>Email</td>
 		</tr>
 		<tr ng-repeat="contato in listAgenda">
+			<td><a href ng-click="edit(contato)"> {{contato.id}} </a></td>
 			<td>{{contato.name}}</td>
 			<td>{{contato.lastName}}</td>
 			<td>{{contato.phone}}</td>
