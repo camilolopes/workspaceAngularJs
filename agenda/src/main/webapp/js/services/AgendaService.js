@@ -1,5 +1,5 @@
 $app.factory('AgendaService', [ '$resource', function($resource) {
-	return $resource('rest/agenda/', {}, {
+	return $resource('rest/agenda/:id', {}, {
 		
 		create : {
 			method : 'POST'
@@ -10,6 +10,9 @@ $app.factory('AgendaService', [ '$resource', function($resource) {
 		},
 		update :{
 			method : "PUT"
+		},
+		remove :{
+			method: "DELETE" 
 		}
 	}
 

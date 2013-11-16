@@ -1,16 +1,16 @@
 var AgendaController = function($scope,AgendaService){
 	
-	//criamos um objeto do service restful, bem parecido com Java
+
 	$scope.agenda = new AgendaService();
 	
-	//estamos invocando o serviço restful 
+	//calling restful service
 	$scope.listAgenda = AgendaService.list();
 	
 	$scope.reset = function(){
 		$scope.agenda = new AgendaService();
 	};
 	
-	//método que salva ou atualiza
+	//save or update
 	$scope.save = function(){
 		if($scope.agenda.id > 0){
 			$scope.update();
@@ -32,6 +32,12 @@ var AgendaController = function($scope,AgendaService){
 	
 	$scope.edit= function(agenda){
 		$scope.agenda = agenda;
+	};
+	
+	$scope.remove = function(agenda){
+		agenda.$remove({id:agenda.id},function(res){
+			$scope.listAgenda = AgendaService.list();
+		});
 	};
 
 };

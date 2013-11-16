@@ -8,6 +8,7 @@ import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
@@ -34,7 +35,9 @@ public class AgendaController {
 	
 	@DELETE
 	@Consumes(MediaType.APPLICATION_JSON)
-	public void delete(Agenda agenda){
+	@Path("/{id}")
+	public void delete(@PathParam("id")Long id){
+		Agenda agenda = agendaService.find(id);
 		agendaService.delete(agenda);
 	}
 	

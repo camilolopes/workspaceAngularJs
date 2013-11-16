@@ -20,7 +20,7 @@ public class AgendaServiceImpl extends GenericServiceImpl<Agenda, AgendaDAO> imp
 	}
 
 	public Agenda find(long id) {
-		
-		return getDao().find(id);
+		Agenda agendaRegister = getDao().find(id);
+		return agendaRegister;
 	}
 }
