@@ -2,34 +2,37 @@
 <html>
 <body>
 	<form name="agendaform">
+	<span>* Required</span>
 		<div>
-			<label>Name</label>
+			<label>Name *</label>
 		</div>
 		<div>
-			<input type="text" ng-model="agenda.name" />
+			<input type="text" ng-model="agenda.name" ng-required="true"/>
 		</div>
 		<div>
-			<label>lastName</label>
+			<label>lastName *</label>
 		</div>
 		<div>
-			<input type="text" ng-model="agenda.lastName" />
+			<input type="text" ng-model="agenda.lastName" ng-required="true"/>
 		</div>
 
 		<div>
-			<label>Phone</label>
+			<label>Phone *</label>
 		</div>
 		<div>
-			<input type="text" ng-model="agenda.phone" />
+			<input type="text" ng-model="agenda.phone" ng-required="true"/>
 		</div>
 		<div>
-			<label>Email</label>
+			<label>Email *</label>
 		</div>
 		<div>
-			<input type="email" ng-model="agenda.email" />
+			<input type="email" ng-model="agenda.email" ng-required="true"/>
 		</div>
 		<div>
-			<input type="submit" value="save" ng-click="save()" />
+			<input type="submit" value="save" ng-click="save()" ng-disabled="agendaform.$invalid" />
+			<input type="reset" value="clear" ng-click="reset()" />
 		</div>
+	
 	</form>
 	
 	<div>
