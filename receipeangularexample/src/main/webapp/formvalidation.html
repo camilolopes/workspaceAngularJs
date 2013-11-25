@@ -1,0 +1,31 @@
+<form name="mainForm" ng-submit="send()">
+	
+<div>
+	<label>Nome</label>
+	<input type="text" ng-model="user.name" name="username" required/>
+	<span ng-class="error" ng-show="mainForm.username.$error.required">Nome é obrigatório</span>
+	
+</div>
+<div>
+	<label>email</label>
+	<input type="email" ng-model="user.email" name="useremail" required/>
+	<span ng-class="error" ng-show="mainForm.useremail.$error.required">Email é obrigatório</span>
+	<span ng-class="error" ng-show="mainForm.useremail.$error.email"> Formato do e-mail é inválido</span>
+</div>
+<div>
+	<label>Idade</label>
+	<input type="number" ng-model="user.age" name="userage" required ng-maxlength=2 ng-minlength=1>
+	<span ng-class="error" ng-show="mainForm.userage.$error.maxlength">Não é permitido mais que 2 digitos</span>
+</div>
+<div>
+<label>Blog/Site</label>
+<input type="url" ng-model="user.site" name="usersite" ng-maxlength=30>
+<!-- the message only show when the form is validated-->
+<div ng-show="mainForm.usersite.$dirty && mainForm.usersite.$invalid">
+	<span ng-class="error" ng-show="mainForm.usersite.$error.url">Url inválida</span>
+</div>
+</div>
+<div>
+<input type="submit" ng-disabled="mainForm.$invalid">
+</div>
+</form>

@@ -1,12 +1,17 @@
 var recipeController = function($scope, UserService) {
 	$scope.name = "";
 	$scope.users = UserService.all();
-
+	
 	$scope.$watch("name", function(newValue, oldValue) {
 		if ($scope.name.length > 0) {
 			$scope.greeting = "Greeting " + $scope.name;
 		}
 	});
+
+	$scope.send = function($scope){
+		alert("send");
+
+	}
 
 };
 recipeController.$inject = [ "$scope", "UserService" ];

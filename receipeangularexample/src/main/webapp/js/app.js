@@ -32,6 +32,10 @@ app.config(function($routeProvider, $httpProvider, $locationProvider) {
 	when("/dialog", {
 		templateUrl : "dialog.html",controller:MyCtrlDialog 
 	}).
+	when("/validationform", {
+		templateUrl : "formvalidation.html",
+		controller : recipeController}).
+
 	when("/watch", {
 		templateUrl : "watch.html",
 		controller : recipeController
