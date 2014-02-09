@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<!-- In this dialog is using angularui -->
+<body>
+<!-- Criando um botão para abrir o modal -->
+<button class="btn" ng-click="open()">Open Dialog</button>
+
+<!-- My dialog Content -->
+<div modal="showModal" close="cancel()">
+	<div class="modal-header">
+		<h4>Modal Dialog</h4>
+	</div>
+	<div class="modal-body">
+		<p>Teste dialog. Are you sure?</p>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-success" ng-click="ok()">Ok</button>
+		<button class="btn" ng-click="cancel()">Cancel</button>
+	</div>
+</div>
+</body>
+</html>

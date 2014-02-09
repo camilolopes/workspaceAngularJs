@@ -1,0 +1,27 @@
+
+
+<!--table with search-->
+<div class="well">
+<label>Search for:<input type="text" ng-model="criteria"></label>
+</div>
+<table class="table table-bordered">
+<thead>
+<th>Name</th>
+<th>Lastname</th>
+<th>Age</th>
+</thead>
+<tbody>
+	<!--search in all attributes -->
+<!--<tr ng-repeat="friend in friends | filter:criteria">-->
+<!--search only by name attribute -->
+<!--<tr ng-repeat="friend in friends | filter:{name:criteria}">	-->
+<!--total record -->
+<tr ng-repeat="friend in friendsFiltered = (friends | filter:criteria)">	
+
+<td>{{friend.name}}</td>
+<td>{{friend.lastname}}</td>
+<td>{{friend.age}}
+</tr>
+</tbody>
+</table>
+Total Record: {{friendsFiltered.length}}

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<span ng-class="{'text-warning':shouldWarn()}">Remaining:{{remaining()}}</span>
+<div class="container" ng-controller="textAreaWithLimitCtrl">
+
+<div class="row">
+	<textarea ng-model="message" ng-maxlength="50">{{message}}</textarea>
+</div>
+
+<div class="row">
+	<button ng-click="send()" ng-disabled="!hasValidLength()">Send</button>
+	<button ng-click="clear()">clear</button>
+</div>
+</div>
+</body>
+</html>

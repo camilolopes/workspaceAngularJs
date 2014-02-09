@@ -1,6 +1,12 @@
 var recipeController = function($scope, UserService) {
 	$scope.name = "";
 	$scope.users = UserService.all();
+
+	$scope.countries = [
+	{name:'Brazil'},
+	{name:'Australia'},
+	{name:'Canadá'}
+	]
 	
 	$scope.$watch("name", function(newValue, oldValue) {
 		if ($scope.name.length > 0) {
@@ -10,8 +16,17 @@ var recipeController = function($scope, UserService) {
 
 	$scope.send = function($scope){
 		alert("send");
-
 	}
+	//check if field passed is valid or invalid 
+	$scope.getCssClasses = function(ngModelController){
+		return{
+			error:ngModelController.$invalid && ngModelController.$dirty,
+			success:ngModelController.$valid && ngModelController.$dirty
+		};
+	};
+	$scope.showError = function(ngModelController,error){
+		return ngModelController.$error[error];
+	};
 
 };
 recipeController.$inject = [ "$scope", "UserService" ];
@@ -33,17 +48,51 @@ var blacklistController = function($scope) {
 var filterController = function($scope) {
 	$scope.friends = [ {
 		name : "Camilo",
+		lastname:"Lopes",
 		age : 20
 	}, {
-		name : "Lopes",
+		name : "Chapolin",
+		lastname:"Santana",
 		age : 55
 	}, {
 		name : "Madruga",
+		lastname:"Santos",
 		age : 60
 	}, {
 		name : "Ana",
+		lastname:"Lopes",
 		age : 30
-	} ];
+	},
+	{
+		name : "Zenilton",
+		lastname:"Alves",
+		age : 30
+	}
+
+	 ];
+
+	  $scope.sortField = undefined;
+      $scope.reverse = false;
+
+	 $scope.isSortUp = function(fieldName){
+	 	return $scope.sortField === fieldName && !$scope.reverse;
+	 };
+	 $scope.isSortDown = function(fieldName){
+	 	return $scope.sortField === fieldName && $scope.reverse;
+	 };
+	 //order data
+	 $scope.sort = function(fieldName){
+	 	if ($scope.sortField === fieldName) {
+	 		$scope.reverse = !$scope.reverse;
+	 	}else{
+	 		$scope.sortField = fieldName;
+	 		$scope.reverse = false;
+
+	 	};
+	 }
+
+	  
+
 };
 
 var PaginationCtrl = function($scope) {

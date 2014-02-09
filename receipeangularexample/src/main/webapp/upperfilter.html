@@ -12,5 +12,24 @@ Enter your name:<input type="text" ng-model="name"></input>
 <div show="visible">
 	<h2>Hello World {{visible}}</h2>
 </div> 
+
+<!--Formatting date -->
+<div>
+<span>Data de Nascimento</span>
+<input ng-model="user.age">
+{{user.age | date:'dd-MM-yyyy'}}
+</div>
+<div>
+<!--applying lowercase -->
+<span>Nome</span>
+<input ng-model="user.name" placeholder="filter convert to lowercase">
+{{user.name | lowercase}}
+</div>
+<div>
+<span>Sobrenome</span>
+<input ng-model="user.lastname" placeholder="filter convert to uppercase">
+{{user.lastname | uppercase	}}
+</div>
+
 </body>
 </html>

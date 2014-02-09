@@ -1,0 +1,72 @@
+<div>
+<label>Role</label>
+<!-- the value for user.admin is set to true if checkbox is checked -->
+<input type="checkbox" ng-model="user.admin">
+{{user.admin}}
+</div>
+<div>
+<label>User Role</label>
+<!-- the value is admin for object user.role when the checkbox is checked"-->
+<input type="checkbox" ng-model="user.role" ng-true-value="admin" ng-false-value="user">
+{{user.role}}
+</div>
+<br/>
+<!--radio -->
+<label>
+<input type="radio" ng-model="user.sex" value="M"> Masculino
+</label>
+<label>
+<input type="radio" ng-model="user.sex" value="F">Feminino
+</label>
+
+<br/>
+
+<!-- Select input with String -->
+<label>Sexo:
+<select ng-model="sex">
+	<option value="M" ng-selected="sex=='M'">Masculino</option>
+	<option value="F" ng-selected="sex=='F'">Feminino</option>
+</select>
+Escolhida foi:{{sex}}
+</label>
+
+<br/>
+<!-- select input with object -->
+<label>Country
+<select ng-model="countrySelected"	ng-options="country.name for country in countries">
+	<option value="">--No Selection--</option>
+</select>
+{{countrySelected}}
+</label>
+
+<br/>
+
+<form name="userInfoForm">
+	<!-- call my function and field will be validated-->
+	<div class="control-group" ng-class="getCssClasses(userInfoForm.email)">
+		<label>E-mail</label>
+		<!-- we must inform name for field -->
+		<input type="email" ng-model="user.email" name="email" required>
+		<!-- will be show only if the format is invalid-->
+		<span ng-show="showError(userInfoForm.email, 'email')">
+			E-mail format is inválid. 
+		</span>
+		<span ng-show="showError(userInfoForm.email,'required')">
+			E-mail is required
+		</span>
+	</div>
+</form>
+
+<!--creating composite  reusable components-->
+<script type="text/ng-template" id="password-form">
+	<label>Password</label>
+	<input ng-model="user.password" type="password" required>
+</script>
+</br>
+<!--using composite -->
+<form name="form1" novalidate>
+	<legend>User</legend>
+	<label>username</label>
+	<input ng-model="user.username" required>
+	<ng-include src="'password-form'"></ng-include>
+</form>

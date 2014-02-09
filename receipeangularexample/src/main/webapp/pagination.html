@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.8/angular.js"></script>
+<script
+	src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.6.0.js"></script>
+
+<link
+	href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css"
+	rel="stylesheet">
+</head>
+<body>
+	  
+	<div ng-controller="PaginationDemoCtrl" class="well well-small">
+		<h4>Default</h4>
+		<ul>
+		<li ng-repeat="item in items">{{item}}</li>
+		</ul>
+		<pagination total-items="bigTotalItems" page="bigCurrentPage"
+			max-size="maxSize" class="pagination-small" boundary-links="true"
+			rotate="false" num-pages="numPages" ></pagination>
+
+		<pre>Page: {{bigCurrentPage}} / {{numPages}}</pre>
+	</div>
+
+	<div ng-controller="MyCtrl">
+		<ul>
+			<li
+				ng-repeat="item in data | startFrom:currentPage*pageSize | limitTo:pageSize">
+				{{item}}</li>
+		</ul>
+
+			
+		<button ng-disabled="currentPage == 0"
+			ng-click="currentPage=currentPage-1">Previous</button>
+		{{currentPage+1}}/{{numberOfPages()}}
+		<button ng-disabled="currentPage >= data.length/pageSize - 1"
+			ng-click="currentPage=currentPage+1">Next</button>
+	</div>
+</body>
+</html>

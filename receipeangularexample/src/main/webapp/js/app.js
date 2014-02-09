@@ -32,10 +32,20 @@ app.config(function($routeProvider, $httpProvider, $locationProvider) {
 	when("/dialog", {
 		templateUrl : "dialog.html",controller:MyCtrlDialog 
 	}).
+	when("/filteradvance", {
+		templateUrl : "filteradvance.html", 
+		controller:filterController
+		}).	
+	when("/filteradvance2", {
+		templateUrl : "filteradvance2.html", 
+		controller:filterController
+		}).	
 	when("/validationform", {
 		templateUrl : "formvalidation.html",
 		controller : recipeController}).
-
+	when("/advancedform", {
+		templateUrl : "advancedform.html",
+		controller : recipeController}).
 	when("/watch", {
 		templateUrl : "watch.html",
 		controller : recipeController
@@ -121,3 +131,4 @@ app.directive("contenteditable",function(){
 	};
 	
 });
+

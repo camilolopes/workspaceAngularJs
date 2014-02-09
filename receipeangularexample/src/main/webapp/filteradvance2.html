@@ -1,0 +1,34 @@
+
+
+<!--table with search-->
+<div class="well">
+<label>Search for:<input type="text" ng-model="criteria"></label>
+</div>
+<table class="table table-bordered table-striped">
+<thead>
+<th ng-click="sort('name')">Name
+<i ng-class="{'icon-chevron-up':isSortUp('name'),'icon-chevron-down':isSortDown('name')}"></i>
+</th>
+<th ng-click="sort('lastname')">Lastname
+<i ng-class="{'icon-chevron-up':isSortUp('lastname'),'icon-chevron-down':isSortDown('lastname')}"></i>
+</th>
+<th ng-click="sort('age')">Age
+<i ng-class="{'icon-chevron-up':isSortUp('age'),'icon-chevron-down':isSortDown('age')}"></i>
+</th>
+</thead>
+<tbody>
+	<!--search in all attributes -->
+<!--<tr ng-repeat="friend in friends | filter:criteria">-->
+<!--search only by name attribute -->
+<!--<tr ng-repeat="friend in friends | filter:{name:criteria}">	-->
+<!--total record -->
+<tr ng-repeat="friend in friendsFiltered = (friends | filter:criteria | orderBy:sortField:reverse  )">	
+
+<td>{{friend.name}}</td>
+<td>{{friend.lastname}}</td>
+<td>{{friend.age}} 
+</tr>
+</tbody>
+</table>
+
+Total Record: {{friendsFiltered.length}}
