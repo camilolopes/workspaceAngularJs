@@ -1,0 +1,13 @@
+<ion-view view-title="Camilo App">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="playlist in playlists" href="#/app/playlists/{{playlist.id}}">
+        {{playlist.title}}
+        
+      </ion-item>
+      <div ng-controller="MainCtrl">
+          Saldo Atual R$ {{teste.data.saldo}}
+       </div>
+    </ion-list>
+  </ion-content>
+</ion-view>

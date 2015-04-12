@@ -10,6 +10,7 @@ angular.module('uiRouteMultipleViewApp', [
 	//disable hashbang 
 	//$locationProvider.html5Mode(true);
 	
+	
 	$stateProvider
 	.state('index',{
 		url:"/", 
@@ -35,7 +36,8 @@ angular.module('uiRouteMultipleViewApp', [
 	.state('admincliente',{
 		url:"/cliente/admin",
 		views:{
-			"admin.cliente":{templateUrl:"views/admincliente.html"}
+			"admin.cliente":{templateUrl:"views/admincliente.html"},
+			"admin.master":{templateUrl:"views/viewmaster.html"}
 		}
-	})
+	});
 });
